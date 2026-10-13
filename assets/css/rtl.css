@@ -1,0 +1,132 @@
+/**
+ * Green Torque (GT EMEA) - Arabic RTL (Right-to-Left) Stylesheet
+ * Ensures natural typography, correct alignment, and seamless flipping.
+ */
+
+/* ==============================================================
+   1. Typography & Global RTL Rules
+   ============================================================== */
+[dir="rtl"],
+body.rtl-mode {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Cairo', 'Noto Sans Arabic', Tahoma, sans-serif;
+  letter-spacing: 0;
+}
+
+/* Ensure Technical Strings, Emails, and Phone Numbers stay LTR */
+[dir="rtl"] .top-bar-contacts a,
+[dir="rtl"] .location-details-list a[href^="tel:"],
+[dir="rtl"] .location-details-list a[href^="mailto:"],
+[dir="rtl"] .footer-contact-items a,
+[dir="rtl"] .counter-val,
+[dir="rtl"] .hero-stat-item .stat-value,
+[dir="rtl"] .code-sample,
+body.rtl-mode [dir="ltr"] {
+  direction: ltr;
+  display: inline-block;
+  unicode-bidi: embed;
+}
+
+/* ==============================================================
+   2. Header & Navigation RTL
+   ============================================================== */
+[dir="rtl"] .lang-dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .nav-link::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .mobile-nav-drawer {
+  right: auto;
+  left: -320px;
+  border-left: none;
+  border-right: 1px solid var(--border-subtle);
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.6);
+  transition: left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[dir="rtl"] .mobile-nav-drawer.active {
+  left: 0;
+  right: auto;
+}
+
+/* ==============================================================
+   3. Directional Icons & Arrows
+   ============================================================== */
+[dir="rtl"] .fa-arrow-right,
+[dir="rtl"] .fa-chevron-right,
+[dir="rtl"] .fa-angle-right {
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+[dir="rtl"] .pillar-card:hover .pillar-link i,
+[dir="rtl"] .service-card-footer a:hover i,
+[dir="rtl"] .footer-links-list a:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .footer-links-list a:hover i {
+  transform: scaleX(-1) translateX(4px);
+}
+
+/* ==============================================================
+   4. Hero & Badges RTL
+   ============================================================== */
+[dir="rtl"] .hero-badge-card {
+  left: auto;
+  right: -20px;
+}
+
+[dir="rtl"] .about-experience-badge {
+  right: auto;
+  left: -20px;
+}
+
+[dir="rtl"] .location-country-badge {
+  left: auto;
+  right: 1rem;
+}
+
+/* ==============================================================
+   5. Search Box & Inputs RTL
+   ============================================================== */
+[dir="rtl"] .search-box-wrap i {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .search-input {
+  padding: 0.65rem 2.6rem 0.65rem 1rem;
+}
+
+[dir="rtl"] select.form-control {
+  background-position: left 1rem center;
+  padding-left: 2.5rem;
+  padding-right: 1.15rem;
+}
+
+/* ==============================================================
+   6. Footer & Alignment RTL
+   ============================================================== */
+[dir="rtl"] .footer-widget-title::after {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .floating-actions {
+  right: auto;
+  left: 2rem;
+}
+
+@media (max-width: 767px) {
+  [dir="rtl"] .floating-actions {
+    right: auto;
+    left: 1.25rem;
+  }
+}
